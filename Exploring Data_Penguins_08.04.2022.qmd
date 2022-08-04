@@ -40,3 +40,64 @@ tail(penguins)
 #typically run these functions in the console
 
 ```
+
+```{r}
+
+skim(penguins)
+
+#skimr is a great function to get an overview of the data
+
+```
+
+
+```{r}
+
+
+#pairs plot to expclicity say what package you can do GGally:: and then funciton name; 
+
+# GGally with ggpairs is a very quick summary of every detail and accounts of relationships with all ways. GGally is a wrapper for all of GG plots and made and formatted in the grid
+
+GGally::ggpairs(penguins)
+
+```
+
+
+##Glipper length by bill length by species
+
+```{r}
+
+#| include: Flase
+
+ggplot(data= penguins, aes(x = species, y = flipper_length_mm)) + geom_jitter(width = 0.2, 
+                                                                              alpha = 0.5, aes(color = species)) +
+  geom_boxplot(fill = NA, color = "gray") +
+  theme_minimal() + 
+  labs( x= "Species", y= "Flipper Length (mm)", title = ("Palmer Archipelago Penguin Flippers")) +
+  scale_color_manual(values = c("#0ea28a", "cyan4", "goldenrod"))
+
+
+# adjust width to reduce the total spread of the plot
+
+# jitter plots show lots of data
+
+# alpha is for transparency where 1 = opaque and 0 = transparent
+
+# 
+
+```
+
+```{r}
+
+# plotting a histogram, only have one variable with all of the different values for that variable
+
+# you can use facet wrap to compare different variables
+
+# colors - fill is to change the area, color is to change lines and points
+
+ggplot(data = penguins, aes(x = bill_length_mm)) + 
+  geom_histogram(aes(fill = species), color = "magenta") + 
+  facet_wrap(~species, ncol = 1) 
+
+
+```
+
