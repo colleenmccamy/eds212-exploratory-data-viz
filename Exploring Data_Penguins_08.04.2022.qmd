@@ -1,0 +1,42 @@
+---
+title: "Day 4 - Exploring Data"
+author: "Colleen McCamy"
+format: html
+editor: visual
+---
+
+```{r}
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(GGally)
+library(skimr)
+
+```
+
+## Exploratory Data Vizzy
+
+Getting to know the data set
+
+```{r}
+#| include: false
+
+# doing this has pipe above it will still run them but not include it in the render but will still be able to use this any values stored here later if needed
+
+# Tell me the column names
+names(penguins)
+
+# What are the dimensions?
+dim(penguins)
+
+# Can you show me the first 6 lines?
+head(penguins)
+
+# Can you show me the last 6 lines?
+tail(penguins)
+
+#typically run these functions in the console
+
+```
